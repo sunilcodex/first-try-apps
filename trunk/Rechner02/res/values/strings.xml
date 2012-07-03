@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Rechner02</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_rechner02">Rechner02</string>
+    <string name="Zahl1">Zahl1</string>
+    <string name="Zahl2">Zahl2</string>
+    <string name="Plus">+</string>
+    <string name="Minus">-</string>
+    <string name="Mal">x</string>
+    <string name="Geteilt">:</string>
+    <string name="Version">Version 0.6</string>
+    <string name="Verlauf">Verlauf</string>
+    <string name="Clear">Löschen</string>
+
+</resources>

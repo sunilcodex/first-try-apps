@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">NotenDurchschnitt</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_noten_durchschnitt">NotenDurchschnitt</string>
+    <string name="Speichern">Note speichern</string>
+    <string name="Rechnen">Schnitt berechnen</string>
+    <string name="Noten">Notenliste</string>
+    <string name="Version">0.5</string>
+    <string name="About">About</string>
+    <string name="Loeschen">Loeschen</string>
+
+</resources>

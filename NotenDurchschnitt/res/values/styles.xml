@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+    <string name="Schnit">Notendurchschnitt</string>
+    <string name="Note">Note</string>
+
+</resources>

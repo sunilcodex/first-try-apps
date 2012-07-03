@@ -53,13 +53,13 @@ public class NotenDurchschnitt extends Activity {
     	EditText N = (EditText)findViewById(R.id.editText1);
     	
     	
-    	//Notenlist.add(N.getText().toString());
-    	
     	
     	
     	int note = Integer.parseInt(N.getText().toString());
-    	
-    	
+    	if (note  <= 0 ){
+    		Toast.makeText(getApplicationContext(), "Fehler", Toast.LENGTH_LONG).show();
+    	} else{
+    		
     	try {
         	datasource.open();
         	datasource.createEntry(note);
@@ -69,7 +69,7 @@ public class NotenDurchschnitt extends Activity {
         		Toast.makeText(this,ex.toString(), Toast.LENGTH_LONG).show();
         		}
     	N.setText("");
-    	Toast.makeText(getApplicationContext(), "Gespeichert", Toast.LENGTH_LONG).show();
+    	Toast.makeText(getApplicationContext(), "Gespeichert", Toast.LENGTH_LONG).show();}
     			
     }
     
@@ -122,14 +122,14 @@ public class NotenDurchschnitt extends Activity {
     	}
 
     List<Entry> Rechenlist = new ArrayList<Entry>();
-    int id = entry.id;
+    
     
     public void Rechnen (View view){
     	
     	datasource.open();
     	Rechenlist = datasource.getAllEntries();
     	datasource.close();
-    	Rechenlist + 
+    	
     	
     }
     

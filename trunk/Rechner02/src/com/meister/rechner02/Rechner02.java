@@ -24,7 +24,7 @@ public class Rechner02 extends Activity {
     double number1 , number2 , solution;
     EditText Feld1 = (EditText)findViewById(R.id.editText1);
     EditText Feld2 = (EditText)findViewById(R.id.editText2);
-    EditText Feld3 = (EditText)findViewById(R.id.editText3);
+    
     if(Feld1.getText().toString().length() == 0){
     	return;
     }
@@ -38,8 +38,7 @@ public class Rechner02 extends Activity {
     number2 = Double.parseDouble(Feld2.getText().toString());
    solution = number1 + number2;
    
-   Feld3.setText(String.valueOf(solution));
-    
+   Feld2.setText(String.valueOf(number1 + "+" + number2 + "=" + solution));
     }
     
     
@@ -47,7 +46,7 @@ public class Rechner02 extends Activity {
         double number1 , number2 , solution;
         EditText Feld1 = (EditText)findViewById(R.id.editText1);
         EditText Feld2 = (EditText)findViewById(R.id.editText2);
-        EditText Feld3 = (EditText)findViewById(R.id.editText3);
+        
         if(Feld1.getText().toString().length() == 0){
         	return;
         }
@@ -61,7 +60,7 @@ public class Rechner02 extends Activity {
         number2 = Double.parseDouble(Feld2.getText().toString());
        solution = number1 - number2;
        
-       Feld3.setText(String.valueOf(solution));
+       Feld2.setText(String.valueOf(number1 + "+" + number2 + "=" + solution));
         
         }
     
@@ -70,7 +69,7 @@ public class Rechner02 extends Activity {
         double number1 , number2 , solution;
         EditText Feld1 = (EditText)findViewById(R.id.editText1);
         EditText Feld2 = (EditText)findViewById(R.id.editText2);
-        EditText Feld3 = (EditText)findViewById(R.id.editText3);
+        
         if(Feld1.getText().toString().length() == 0){
         	return;
         }
@@ -84,7 +83,7 @@ public class Rechner02 extends Activity {
         number2 = Double.parseDouble(Feld2.getText().toString());
        solution = number1 * number2;
        
-       Feld3.setText(String.valueOf(solution));
+       Feld2.setText(String.valueOf(number1 + "+" + number2 + "=" + solution));
         
         }
     
@@ -93,7 +92,7 @@ public class Rechner02 extends Activity {
         double number1 , number2 , solution;
         EditText Feld1 = (EditText)findViewById(R.id.editText1);
         EditText Feld2 = (EditText)findViewById(R.id.editText2);
-        EditText Feld3 = (EditText)findViewById(R.id.editText3);
+        
         if(Feld1.getText().toString().length() == 0){
         	return;
         }
@@ -107,23 +106,22 @@ public class Rechner02 extends Activity {
         number2 = Double.parseDouble(Feld2.getText().toString());
        solution = number1 / number2;
        
-       Feld3.setText(String.valueOf(solution));
+       Feld2.setText(String.valueOf(number1 + "+" + number2 + "=" + solution));
         
         }
     
-    public void Wechsel(View view){
+   /* public void Wechsel(View view){
     	setContentView(R.layout.verlauf);
-    }
+    }*/
     
     public void Loeschen(View view){
     	EditText Feld1 = (EditText)findViewById(R.id.editText1);
         EditText Feld2 = (EditText)findViewById(R.id.editText2);
-        EditText Feld3 = (EditText)findViewById(R.id.editText3);
+        
         
         Feld1.setText("");
         Feld2.setText("");
-        Feld3.setText("");
-    	
+        
     }
     
     

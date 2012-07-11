@@ -4,6 +4,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_lotto_zahlen">LottoZahlen</string>
-    <string name="Gen">Generate</string>
+    <string name="Gen">Generiere</string>
+    <string name="Z">Zusatzzahl</string>
+    <string name="S">Superzahl</string>
 
 </resources>

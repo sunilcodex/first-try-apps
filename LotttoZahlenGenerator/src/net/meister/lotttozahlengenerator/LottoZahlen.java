@@ -49,7 +49,7 @@ public class LottoZahlen extends Activity {
 	      int zahl5 = (int) (Math.floor(Math.random()*(49+1)));
 	      int zahl6 = (int) (Math.floor(Math.random()*(49+1)));
 	      
-	      int zahls = (int) (Math.floor(Math.random()*(49+1)));
+	      int zahls = (int) (Math.floor(Math.random()*(10+1)));
 	      int zahlz = (int) (Math.floor(Math.random()*(49+1)));
 	      
 	      

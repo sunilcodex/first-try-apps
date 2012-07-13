@@ -9,8 +9,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="187dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="200dp"
         android:onClick="Generate"
         android:text="@string/Gen" />
 

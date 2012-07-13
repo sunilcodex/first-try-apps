@@ -42,10 +42,10 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button1"
         android:layout_alignBottom="@+id/button1"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/button1"
-        android:text="@string/Minus"
-        android:onClick="Minus" />
+        android:onClick="Minus"
+        android:text="@string/Minus" />
 
     <Button
         android:id="@+id/button3"
@@ -53,10 +53,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button2"
-        android:layout_marginLeft="14dp"
+        android:layout_marginLeft="30dp"
         android:layout_toRightOf="@+id/button2"
-        android:text="@string/Mal"
-        android:onClick="Mal" />
+        android:onClick="Mal"
+        android:text="@string/Mal" />
 
     <Button
         android:id="@+id/button5"
@@ -76,7 +76,32 @@
         android:layout_alignBaseline="@+id/button2"
         android:layout_alignBottom="@+id/button2"
         android:layout_alignLeft="@+id/button5"
+        android:layout_marginRight="200dp"
         android:onClick="Geteilt"
         android:text="@string/Geteilt" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_below="@+id/editText3"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/Verlauf"
+        android:onClick="Verlauf" />
 
  </RelativeLayout>

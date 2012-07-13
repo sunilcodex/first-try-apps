@@ -7,5 +7,7 @@
     <string name="Gen">Generiere</string>
     <string name="Z">Zusatzzahl</string>
     <string name="S">Superzahl</string>
+    <string name="Zufallszahl">Zufallszahl</string>
+    <string name="Ergebniss"/>
 
 </resources>

@@ -4,11 +4,14 @@ package de.meister.numbers;
 
 
 
+
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 
 public class Home extends Activity {
 
@@ -60,6 +63,36 @@ public class Home extends Activity {
     	
     }
     
+    
+    //------------------------------------------------------
+    
+    public void countdown(View view){
+    int z;
+    
+    EditText Feld1 = (EditText)findViewById(R.id.editText1);
+    z =  Integer.parseInt(Feld1.getText().toString());
+    
+    //if(z >= 0){
+    	z--;
+    Feld1.setText(String.valueOf(z));
+    //}
+    	
+    	
+    }
+    
+    public void upcount(View view){
+    	
+    	
+    	    int z;
+    	    
+    	    EditText Feld1 = (EditText)findViewById(R.id.editText1);
+    	    z =  Integer.parseInt(Feld1.getText().toString());
+    	    
+    	    //if(z >= 0){
+    	    	z++;
+    	    Feld1.setText(String.valueOf(z));
+    	    //}
+    }
 
     
 }

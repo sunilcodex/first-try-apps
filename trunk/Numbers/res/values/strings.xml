@@ -3,11 +3,14 @@
     <string name="app_name">Numbers</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_home">Home</string>
+    <string name="title_activity_home">Numbers</string>
     <string name="Countdown">Countdown</string>
     <string name="Upcount">Counter</string>
     <string name="Billion">BillionCounter</string>
     <string name="Endless">DauerSchleife</string>
-    <string name="Start">Start</string>
+    
+    <string name="Null">Zahl für Countdown eingeben</string>
+    <string name="Hochzählen">Hochzählen</string>
+    
 
 </resources>

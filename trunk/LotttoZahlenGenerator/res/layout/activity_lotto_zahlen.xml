@@ -59,4 +59,13 @@
         android:text="@string/Z"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <DigitalClock
+        android:id="@+id/digitalClock1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="@string/digitalclock" />
+
 </RelativeLayout>

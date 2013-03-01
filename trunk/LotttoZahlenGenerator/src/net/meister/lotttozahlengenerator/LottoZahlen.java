@@ -63,7 +63,7 @@ public class LottoZahlen extends Activity {
 	      
 	      
 	      Feld1.setText(String.valueOf(zahl1 + "  " + zahl2 + "  " + zahl3 + "  " + zahl4 + "  " + zahl5 + "  " + zahl6));
-	      Feld2.setText(String.valueOf(zahls + "                    " + zahlz)); 
+	      Feld2.setText(String.valueOf(zahls + "                            " + zahlz)); 
 	     
 
 

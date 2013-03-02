@@ -10,5 +10,6 @@
     <string name="Zufallszahl">Zufallszahl</string>
     <string name="Ergebniss"/>
     <string name="digitalclock">DigitalClock</string>
+    <string name="Verlauf">Verlauf</string>
 
 </resources>

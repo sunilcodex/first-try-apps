@@ -5,9 +5,19 @@ package net.meister.lotttozahlengenerator;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.analytics.tracking.android.EasyTracker;
+//import com.google.analytics.tracking.android.Tracker;
+import android.app.Activity;
+
+import com.google.analytics.tracking.android.GoogleAnalytics;
+import com.google.analytics.tracking.android.Tracker;
+
+
+
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -16,6 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
 
 
 
@@ -33,13 +44,69 @@ public class LottoZahlen extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lotto_zahlen);
+        EasyTracker.getInstance().setContext(getApplicationContext());
+        
+        
+        
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_lotto_zahlen, menu);
         return true;
+       
     }
+    
+    
+    	
+    @Override
+    public void onStart() {
+      super.onStart();
+      Context context= this;  // Get current context.
+  	EasyTracker.getInstance().setContext(context);  // Set context
+      EasyTracker.getInstance().activityStart(this); // Add this method.
+    }
+
+    @Override
+    public void onStop() {
+      super.onStop();
+     
+      EasyTracker.getInstance().activityStop(this); // Add this method.
+    }
+    
+    private Tracker mGaTracker;
+    private GoogleAnalytics mGaInstance;
+
+    public void onCreate1(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+
+      // Get the GoogleAnalytics singleton. Note that the SDK uses
+      // the application context to avoid leaking the current context.
+      mGaInstance = GoogleAnalytics.getInstance(this);
+
+      // Use the GoogleAnalytics singleton to get a Tracker.
+      mGaTracker = mGaInstance.getTracker("UA-38978202-1"); // Placeholder tracking ID.
+      
+   // Get singleton using application context.
+      GoogleAnalytics myInstance = GoogleAnalytics.getInstance(this);
+
+      // Enable debug mode.
+      myInstance.setDebug(true);
+     
+    }
+
+    public void onStart1() {
+      super.onStart();
+
+      // Send a screen view when the Activity is displayed to the user.
+      mGaTracker.sendView("/HomeScreen");
+    }
+    
+    
+    
+    
+    
+    
     
     List<String> Rechnungenlist1 = new ArrayList<String>();
 		public void Generate(View view){

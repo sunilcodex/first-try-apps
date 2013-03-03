@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 
         mWebView.addJavascriptInterface(new DemoJavaScriptInterface(), "demo");
 
-        mWebView.loadUrl("http://mc-dynmap.net.ms");
+        mWebView.loadUrl("http://merz-server.dyndns.biz:6067/#");
     }
 
     final class DemoJavaScriptInterface {

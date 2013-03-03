@@ -6,5 +6,13 @@
     <string name="hello_world">Hello world!</string>
     <string name="Oeffnen">Öffnen</string>
     <string name="Gen">Generieren</string>
+    <string name="Info">Severinformationen</string>
+    <string name="Info1">Merz-Minecraftserver: </string>
+    <string name="Info2">merz-server.dyndns.biz</string>
+    <string name="Info3">Team:</string>
+    <string name="Info4">Admin: DiD</string>
+    <string name="Info5">GMs:</string>
+    <string name="Info6"> xP [Bauleiter]</string>
+    <string name="Info7"> blood42 [Bauunternehmer]</string>
 
 </resources>

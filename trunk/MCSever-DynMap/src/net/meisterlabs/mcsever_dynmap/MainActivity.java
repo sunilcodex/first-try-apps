@@ -3,10 +3,16 @@ package net.meisterlabs.mcsever_dynmap;
 
 
 
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -38,6 +44,21 @@ public class MainActivity extends Activity {
         mWebView.addJavascriptInterface(new DemoJavaScriptInterface(), "demo");
 
         mWebView.loadUrl("http://merz-server.dyndns.biz:6067/#");
+        
+        
+        //info
+        //WebView mWebView1 = (WebView) findViewById(R.id.w1);
+
+        
+        //mWebView1.setWebChromeClient(new MyWebChromeClient());
+
+       
+
+        //mWebView1.loadUrl("https://googledrive.com/host/0B4aMlHpq7Z9ed05mdmxtc1ZYZ00/serverinfo.html");
+        
+        
+        
+        
     }
 
     final class DemoJavaScriptInterface {
@@ -45,10 +66,7 @@ public class MainActivity extends Activity {
         DemoJavaScriptInterface() {
         }
 
-        /**
-         * This is not called on the UI thread. Post a runnable to invoke
-         * loadUrl on the UI thread.
-         */
+        
         public void clickOnAndroid() {
             mHandler.post(new Runnable() {
                 public void run() {
@@ -59,10 +77,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    /**
-     * Provides a hook for calling "alert" from javascript. Useful for
-     * debugging your javascript.
-     */
+    //chrome
     final class MyWebChromeClient extends WebChromeClient {
         @Override
         public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
@@ -70,5 +85,45 @@ public class MainActivity extends Activity {
             result.confirm();
             return true;
         }
+    }
+    
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_main, menu);
+        return true;
+    }
+    
+ public void info(View view){
+    	
+    	setContentView(R.layout.activity_info2);
+    	
+    	
+    	
+    }
+ 
+ @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+       
+        switch (item.getItemId()) {
+            case R.id.menu:
+                info(mWebView);
+                return true;
+           
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    
+    
+    
+    public boolean onKeyDown(int keyCode,KeyEvent event ){
+    	boolean mainisopen = false;
+		if(keyCode == KeyEvent.KEYCODE_BACK && mainisopen == false){
+    	mainisopen =true;
+    	setContentView(R.layout.activity_main);
+    	return true;
+    		
+    	}
+    	return super.onKeyDown(keyCode, event);
     }
 }

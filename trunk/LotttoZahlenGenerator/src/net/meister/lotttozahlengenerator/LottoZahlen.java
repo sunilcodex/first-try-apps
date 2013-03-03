@@ -5,6 +5,8 @@ package net.meister.lotttozahlengenerator;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.meister.lotttozahlengenerator.R.string;
+
 import com.google.analytics.tracking.android.EasyTracker;
 //import com.google.analytics.tracking.android.Tracker;
 import android.app.Activity;
@@ -134,11 +136,8 @@ public class LottoZahlen extends Activity {
 	      Feld2.setText(String.valueOf(zahls + "                            " + zahlz)); 
 	     
 	    
-	  	Rechnungenlist1.add(Feld1.getText().toString() );
-	    //ArrayAdapter<String> adapter = new ArrayAdapter<String>(LottoZahlen.this, android.R.layout.simple_list_item_1, Rechnungenlist1);
-    	//ListView lNoten = (ListView)findViewById(R.id.listView1);
-    	//lNoten.setAdapter(adapter);
-	  	
+	  	Rechnungenlist1.add(Feld1.getText().toString()  + "       SZ:" + zahls + "      ZZ:" + zahlz );
+	  
 	  	Toast.makeText(getApplicationContext(), "Gespeichert", Toast.LENGTH_LONG).show();
 		}
 
@@ -151,15 +150,20 @@ public class LottoZahlen extends Activity {
 	      public void Verlauf(View view){
 	      	@SuppressWarnings("unused")
 	  		boolean mainisopen = false;
-	      	setContentView(R.layout.verlauf);}
-	      	
-	      //ArrayAdapter<String> adapter = new ArrayAdapter<String>(LottoZahlen.this, android.R.layout.simple_list_item_1, Rechnungenlist1);
-	    	//ListView lNoten = (ListView)findViewById(R.id.listView1);
-	    	//lNoten.setAdapter(adapter);
-	    	
+	      	setContentView(R.layout.verlauf);
+	      
+	      ArrayAdapter<String> adapter = new ArrayAdapter<String>(LottoZahlen.this, android.R.layout.simple_list_item_1, Rechnungenlist1);
+	    	ListView lNoten = (ListView)findViewById(R.id.listView1);
+	      	lNoten.setAdapter(adapter);
+
+
+		  	
+	      }
+	      
 	    
 	      
-	    	public boolean onKeyDown(int keyCode,KeyEvent event ){
+	    	
+	      	public boolean onKeyDown(int keyCode,KeyEvent event ){
 	        	boolean mainisopen = false;
 	    		if(keyCode == KeyEvent.KEYCODE_BACK && mainisopen == false){
 	        	mainisopen =true;

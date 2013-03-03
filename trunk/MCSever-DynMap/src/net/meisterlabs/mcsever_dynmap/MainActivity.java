@@ -87,43 +87,43 @@ public class MainActivity extends Activity {
         }
     }
     
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.activity_main, menu);
-        return true;
-    }
-    
- public void info(View view){
-    	
-    	setContentView(R.layout.activity_info2);
-    	
-    	
-    	
-    }
- 
- @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+ public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.activity_main, menu);
+    return true;
+}
+
+public void info(View view){
+	
+	setContentView(R.layout.activity_info2);
+	
+	
+	
+}
+
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+   
+    switch (item.getItemId()) {
+        case R.id.menu:
+            info(mWebView);
+            return true;
        
-        switch (item.getItemId()) {
-            case R.id.menu:
-                info(mWebView);
-                return true;
-           
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        default:
+            return super.onOptionsItemSelected(item);
     }
-    
-    
-    
-    public boolean onKeyDown(int keyCode,KeyEvent event ){
-    	boolean mainisopen = false;
-		if(keyCode == KeyEvent.KEYCODE_BACK && mainisopen == false){
-    	mainisopen =true;
-    	setContentView(R.layout.activity_main);
-    	return true;
-    		
-    	}
-    	return super.onKeyDown(keyCode, event);
-    }
+}
+
+
+//FEHLER ->
+public boolean onKeyDown(int keyCode,KeyEvent event ){
+	boolean mainisopen = false;
+	if(keyCode == KeyEvent.KEYCODE_BACK && mainisopen == false){
+	mainisopen =true;
+	setContentView(R.layout.activity_main);
+	return true;
+		
+	}
+	return super.onKeyDown(keyCode, event);
+}
 }

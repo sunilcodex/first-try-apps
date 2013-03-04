@@ -13,6 +13,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:text="@string/Info"
-        android:onClick="info" />
+        android:onClick="wechsel" />
 
 </RelativeLayout>

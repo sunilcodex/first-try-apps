@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
         }
     }
   
- public boolean onCreateOptionsMenu(Menu menu) {
+/**public boolean onCreateOptionsMenu(Menu menu) {
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.activity_main, menu);
     return true;
@@ -113,5 +113,5 @@ public boolean onKeyDown(int keyCode,KeyEvent event ){
 		
 	}
 	return super.onKeyDown(keyCode, event);
-}
+}*/
 }

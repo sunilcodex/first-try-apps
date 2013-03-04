@@ -1,11 +1,12 @@
 package net.meisterlabs.mcsever_dynmap;
 
-import net.meisterlabs.mcsever_dynmap.infofile.DemoJavaScriptInterface;
-import net.meisterlabs.mcsever_dynmap.infofile.MyWebChromeClient;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -14,6 +15,17 @@ import android.webkit.WebView;
 
 
 public class infofile extends Activity {
+	
+	public void onCreate1(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_info2);
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_menu, menu);
+        return true;
+    }
+
 
 	private static final String LOG_TAG = "WebViewDemo";
 
@@ -26,8 +38,8 @@ public class infofile extends Activity {
     	 	
     	
         super.onCreate(icicle);
-        setContentView(R.layout.activity_main);
-        mWebView = (WebView) findViewById(R.id.webview);
+        setContentView(R.layout.activity_info2);
+        mWebView = (WebView) findViewById(R.id.w1);
 
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setSavePassword(false);

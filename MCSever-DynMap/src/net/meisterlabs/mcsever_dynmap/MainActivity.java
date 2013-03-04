@@ -166,6 +166,7 @@ public class MainActivity extends Activity {
     	Intent intent = new Intent(this, infofile.class);
         switch (item.getItemId()) {
             case R.id.menu:
+            	//setContentView(R.layout.activity_info2);
             	startActivity(new Intent(this, infofile.class));	        	
               return true;
            

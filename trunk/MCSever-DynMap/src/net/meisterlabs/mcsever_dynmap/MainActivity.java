@@ -46,15 +46,6 @@ public class MainActivity extends Activity {
         mWebView.loadUrl("http://merz-server.dyndns.biz:6067/#");
         
         
-        /**info
-        WebView mWebView1 = (WebView) findViewById(R.id.w1);
-
-        
-        mWebView1.setWebChromeClient(new MyWebChromeClient());
-
-       
-
-        mWebView1.loadUrl("https://googledrive.com/host/0B4aMlHpq7Z9ed05mdmxtc1ZYZ00/serverinfo.html");*/
         
         
         
@@ -91,9 +82,20 @@ public class MainActivity extends Activity {
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.activity_main, menu);
     return true;
-}
+} */
 
 public void info(View view){
+	
+	//info ????
+    WebView mWebView1 = (WebView) findViewById(R.id.w1);
+
+    
+    mWebView1.setWebChromeClient(new MyWebChromeClient());
+
+   
+
+    mWebView1.loadUrl("https://googledrive.com/host/0B4aMlHpq7Z9ed05mdmxtc1ZYZ00/serverinfo.html");
+    
 	
 	setContentView(R.layout.activity_info2);
 	
@@ -113,5 +115,5 @@ public boolean onKeyDown(int keyCode,KeyEvent event ){
 		
 	}
 	return super.onKeyDown(keyCode, event);
-}*/
+}
 }

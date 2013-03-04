@@ -6,6 +6,7 @@ package net.meisterlabs.mcsever_dynmap;
 
 
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -22,7 +23,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.content.Intent;
+
 
 
 public class MainActivity extends Activity {
@@ -152,6 +153,9 @@ public class MainActivity extends Activity {
     
     //------------------------------------------------------------------------------------------------------------------------
 
+    //______________________________________________________________________________________________________________________________
+    
+    
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -166,8 +170,9 @@ public class MainActivity extends Activity {
     	Intent intent = new Intent(this, infofile.class);
         switch (item.getItemId()) {
             case R.id.menu:
-            	//setContentView(R.layout.activity_info2);
-            	startActivity(new Intent(this, infofile.class));	        	
+            	startActivity(intent);
+
+            	//startActivity(new Intent(this, infofile.class));	        	
               return true;
            
             default:

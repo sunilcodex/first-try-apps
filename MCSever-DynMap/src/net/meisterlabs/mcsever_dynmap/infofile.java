@@ -19,8 +19,11 @@ public class infofile extends Activity {
 	public void onCreate1(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info2);
+        
+        
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
+	
+	public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.activity_menu, menu);
         return true;
@@ -83,4 +86,5 @@ public class infofile extends Activity {
             return true;
         }
     }
+    
 }

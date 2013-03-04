@@ -46,15 +46,15 @@ public class MainActivity extends Activity {
         mWebView.loadUrl("http://merz-server.dyndns.biz:6067/#");
         
         
-        //info
-        //WebView mWebView1 = (WebView) findViewById(R.id.w1);
+        /**info
+        WebView mWebView1 = (WebView) findViewById(R.id.w1);
 
         
-        //mWebView1.setWebChromeClient(new MyWebChromeClient());
+        mWebView1.setWebChromeClient(new MyWebChromeClient());
 
        
 
-        //mWebView1.loadUrl("https://googledrive.com/host/0B4aMlHpq7Z9ed05mdmxtc1ZYZ00/serverinfo.html");
+        mWebView1.loadUrl("https://googledrive.com/host/0B4aMlHpq7Z9ed05mdmxtc1ZYZ00/serverinfo.html");*/
         
         
         
@@ -86,7 +86,7 @@ public class MainActivity extends Activity {
             return true;
         }
     }
-    
+  
  public boolean onCreateOptionsMenu(Menu menu) {
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.activity_main, menu);
@@ -101,21 +101,9 @@ public void info(View view){
 	
 }
 
-@Override
-public boolean onOptionsItemSelected(MenuItem item) {
-   
-    switch (item.getItemId()) {
-        case R.id.menu:
-            info(mWebView);
-            return true;
-       
-        default:
-            return super.onOptionsItemSelected(item);
-    }
-}
 
 
-//FEHLER ->
+
 public boolean onKeyDown(int keyCode,KeyEvent event ){
 	boolean mainisopen = false;
 	if(keyCode == KeyEvent.KEYCODE_BACK && mainisopen == false){

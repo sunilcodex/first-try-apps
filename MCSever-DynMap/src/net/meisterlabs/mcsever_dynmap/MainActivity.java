@@ -4,8 +4,11 @@ package net.meisterlabs.mcsever_dynmap;
 
 
 
+
+
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -18,6 +21,8 @@ import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.content.Intent;
 
 
 public class MainActivity extends Activity {
@@ -76,105 +81,105 @@ public class MainActivity extends Activity {
         }
     }
   
+    
+
+    
+    
+
+    public class Info extends Activity {
+         private static final String LOG_TAG1 = "WebViewDemo1";
+
+            private WebView mWebView1;
+
+            private Handler mHandler1 = new Handler();
+ 
+
+            public void onCreate(Bundle icicle) {
+                super.onCreate(icicle);
+                
+                mWebView1 = (WebView) findViewById(R.id.w1);
+
+                WebSettings webSettings1 = mWebView1.getSettings();
+                webSettings1.setSavePassword(false);
+                webSettings1.setSaveFormData(false);
+                webSettings1.setJavaScriptEnabled(true);
+                webSettings1.setSupportZoom(false);
+
+                mWebView1.setWebChromeClient(new MyWebChromeClient1());
+
+                mWebView1.addJavascriptInterface(new DemoJavaScriptInterface1(), "demo1");
+
+                mWebView1.loadUrl("https://googledrive.com/host/0B4aMlHpq7Z9ed05mdmxtc1ZYZ00/serverinfo.html");
+                
+               
+                
+                
+            }
+
+            final class DemoJavaScriptInterface1 {
+
+                DemoJavaScriptInterface1() {
+                }
+
+                
+                public void clickOnAndroid() {
+                    mHandler1.post(new Runnable() {
+                        public void run() {
+                            mWebView1.loadUrl("javascript:wave()");
+                        }
+                    });
+                    
+                    
+
+                }
+            }
+ 
+            //chrome
+            final class MyWebChromeClient1 extends WebChromeClient {
+                @Override
+                public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+                    Log.d(LOG_TAG1, message);
+                    result.confirm();
+                    return true;
+                }
+            }
+    }
+    
+	
+	
+    
+
+    
+    //------------------------------------------------------------------------------------------------------------------------
+
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.activity_main, menu);
         return true;
     }
-
-    
-    
-
-    public class Info extends Activity {
-	 private static final String LOG_TAG1 = "WebViewDemo1";
-
-	    private WebView mWebView1;
-
-	    private Handler mHandler1 = new Handler();
- 
-
-	    public void onCreate(Bundle icicle) {
-	        super.onCreate(icicle);
-	        
-	        mWebView1 = (WebView) findViewById(R.id.w1);
-
-	        WebSettings webSettings1 = mWebView1.getSettings();
-	        webSettings1.setSavePassword(false);
-	        webSettings1.setSaveFormData(false);
-	        webSettings1.setJavaScriptEnabled(true);
-	        webSettings1.setSupportZoom(false);
-
-	        mWebView1.setWebChromeClient(new MyWebChromeClient1());
-
-	        mWebView1.addJavascriptInterface(new DemoJavaScriptInterface1(), "demo1");
-
-	        mWebView1.loadUrl("https://googledrive.com/host/0B4aMlHpq7Z9ed05mdmxtc1ZYZ00/serverinfo.html");
-	        
-	       
-	        
-	        
-	    }
-
-	    final class DemoJavaScriptInterface1 {
-
-	        DemoJavaScriptInterface1() {
-	        }
-
-	        
-	        public void clickOnAndroid() {
-	            mHandler1.post(new Runnable() {
-	                public void run() {
-	                    mWebView1.loadUrl("javascript:wave()");
-	                }
-	            });
-	            
-	            
-
-	        }
-	    }
- 
-	    //chrome
-	    final class MyWebChromeClient1 extends WebChromeClient {
-	        @Override
-	        public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-	            Log.d(LOG_TAG1, message);
-	            result.confirm();
-	            return true;
-	        }
-	    }
-    }
-    
-    
     
     //var. 1
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-       
+    	Intent intent = new Intent(this, infofile.class);
         switch (item.getItemId()) {
             case R.id.menu:
-            	setContentView(R.layout.activity_info2);
-            	
-            	
-       
-                return true;
+            	startActivity(new Intent(this, infofile.class));	        	
+              return true;
            
             default:
-                return super.onOptionsItemSelected(item);
+                return super.onOptionsItemSelected(item); 
         }
     }
-   //var 2
+  
     
-    public void wechsel(View view){
-    	
-        setContentView(R.layout.activity_info2);	
-        
-       
-      	
+    
 
-      } 
     
-public boolean onKeyDown(int keyCode,KeyEvent event ){
+   
+  public boolean onKeyDown(int keyCode,KeyEvent event ){
 	boolean mainisopen = false;
 	if(keyCode == KeyEvent.KEYCODE_BACK && mainisopen == false){
 	mainisopen =true;
@@ -182,6 +187,7 @@ public boolean onKeyDown(int keyCode,KeyEvent event ){
 	return true;
 		
 	}
+  
 	return super.onKeyDown(keyCode, event);
-}
+} 
 }

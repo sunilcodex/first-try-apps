@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.meister.lotttozahlengenerator"
-    android:versionCode="251"
-    android:versionName="2.5.1" >
+    android:versionCode="260"
+    android:versionName="2.6" >
 
     <uses-sdk
         android:minSdkVersion="1"

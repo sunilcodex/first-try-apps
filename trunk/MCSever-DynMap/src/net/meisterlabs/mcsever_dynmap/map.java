@@ -1,7 +1,7 @@
 package net.meisterlabs.mcsever_dynmap;
 
-import net.meisterlabs.mcsever_dynmap.map.DemoJavaScriptInterface;
-import net.meisterlabs.mcsever_dynmap.map.MyWebChromeClient;
+//import net.meisterlabs.mcsever_dynmap.map.DemoJavaScriptInterface;
+//import net.meisterlabs.mcsever_dynmap.map.MyWebChromeClient;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;

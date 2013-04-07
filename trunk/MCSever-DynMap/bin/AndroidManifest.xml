@@ -22,7 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="infofile"></activity>
+        <receiver android:name=".NewNotificationBroadcastReceiver">
+	<intent-filter>
+		<action android:name="com.usk.app.notifymyandroid.NEW_NOTIFICATION"/>
+	</intent-filter>
+</receiver>
     </application>
 
 </manifest>

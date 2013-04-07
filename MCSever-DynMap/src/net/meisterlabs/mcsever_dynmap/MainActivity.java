@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
         webSettings.setSavePassword(false);
         webSettings.setSaveFormData(false);
         webSettings.setJavaScriptEnabled(true);
-        webSettings.setSupportZoom(false);
+        webSettings.setSupportZoom(true);
 
         mWebView.setWebChromeClient(new MyWebChromeClient());
 
@@ -120,27 +120,6 @@ public class MainActivity extends Activity {
     }
   */
     
-    //----------------------------------------------------------------------------------------------------------------------
-    public class NewNotificationBroadcastReceiver extends BroadcastReceiver {
-    	public static final String MY_OWN_COOL_ACTIVITY = "net.meisterlabs.mcsever_dynmap.MainActivity";
-    	
-    	@Override
-    	public void onReceive(Context context, Intent intent) {
-    		Uri data = intent.getData();
-    		String title = intent.getStringExtra("title");
-    		String event = intent.getStringExtra("event");
-    		String desc = intent.getStringExtra("desc");
-    		int priority = intent.getIntExtra("prio", 0);
-    		String url = intent.getStringExtra("url");
-    		
-    		// Run some custom code, if you wish
-    		
-    		// Start your own activity to execute some actions and show something for the user
-    		intent = new Intent(MY_OWN_COOL_ACTIVITY, data);
-    		context.startActivity(getIntent());
-    		
-    	}
-    }
     
     
  //_---------------------------------------------------------------------------------------------------------------------

@@ -8,6 +8,8 @@ package net.meisterlabs.mcsever_dynmap;
 
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -49,7 +51,7 @@ public class MainActivity extends Activity {
 
         mWebView.addJavascriptInterface(new DemoJavaScriptInterface(), "demo");
 
-        mWebView.loadUrl("http://merz-server.dyndns.biz:6067/#  ");
+        mWebView.loadUrl("http://merz-server.dyndns.biz:6067/#");
         
        
         
@@ -87,69 +89,6 @@ public class MainActivity extends Activity {
     
     
 
-    public class Info extends Activity {
-         private static final String LOG_TAG1 = "WebViewDemo1";
-
-            private WebView mWebView1;
-
-            private Handler mHandler1 = new Handler();
- 
-
-            public void onCreate(Bundle icicle) {
-                super.onCreate(icicle);
-                
-                mWebView1 = (WebView) findViewById(R.id.w1);
-
-                WebSettings webSettings1 = mWebView1.getSettings();
-                webSettings1.setSavePassword(false);
-                webSettings1.setSaveFormData(false);
-                webSettings1.setJavaScriptEnabled(true);
-                webSettings1.setSupportZoom(false);
-
-                mWebView1.setWebChromeClient(new MyWebChromeClient1());
-
-                mWebView1.addJavascriptInterface(new DemoJavaScriptInterface1(), "demo1");
-
-                mWebView1.loadUrl("https://googledrive.com/host/0B4aMlHpq7Z9ed05mdmxtc1ZYZ00/serverinfo.html");
-                
-               
-                
-                
-            }
-
-            final class DemoJavaScriptInterface1 {
-
-                DemoJavaScriptInterface1() {
-                }
-
-                
-                public void clickOnAndroid() {
-                    mHandler1.post(new Runnable() {
-                        public void run() {
-                            mWebView1.loadUrl("javascript:wave()");
-                        }
-                    });
-                    
-                    
-
-                }
-            }
- 
-            //chrome
-            final class MyWebChromeClient1 extends WebChromeClient {
-                @Override
-                public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-                    Log.d(LOG_TAG1, message);
-                    result.confirm();
-                    return true;
-                }
-            }
-    }
-    
-	
-	
-    
-
     
     //------------------------------------------------------------------------------------------------------------------------
 
@@ -157,7 +96,7 @@ public class MainActivity extends Activity {
     
     
     
-    @Override
+    /**@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.activity_main, menu);
@@ -179,10 +118,32 @@ public class MainActivity extends Activity {
                 return super.onOptionsItemSelected(item); 
         }
     }
-  
+  */
+    
+    //----------------------------------------------------------------------------------------------------------------------
+    public class NewNotificationBroadcastReceiver extends BroadcastReceiver {
+    	public static final String MY_OWN_COOL_ACTIVITY = "net.meisterlabs.mcsever_dynmap.MainActivity";
+    	
+    	@Override
+    	public void onReceive(Context context, Intent intent) {
+    		Uri data = intent.getData();
+    		String title = intent.getStringExtra("title");
+    		String event = intent.getStringExtra("event");
+    		String desc = intent.getStringExtra("desc");
+    		int priority = intent.getIntExtra("prio", 0);
+    		String url = intent.getStringExtra("url");
+    		
+    		// Run some custom code, if you wish
+    		
+    		// Start your own activity to execute some actions and show something for the user
+    		intent = new Intent(MY_OWN_COOL_ACTIVITY, data);
+    		context.startActivity(getIntent());
+    		
+    	}
+    }
     
     
-
+ //_---------------------------------------------------------------------------------------------------------------------
     
    
   public boolean onKeyDown(int keyCode,KeyEvent event ){

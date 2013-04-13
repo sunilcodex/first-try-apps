@@ -7,6 +7,10 @@ package net.meisterlabs.mcsever_dynmap;
 
 
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.GoogleAnalytics;
+import com.google.analytics.tracking.android.Tracker;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -53,10 +57,67 @@ public class MainActivity extends Activity {
 
         mWebView.loadUrl("http://merz-server.dyndns.biz:6067/#");
         
-       
+        EasyTracker.getInstance().setContext(getApplicationContext());
         
         
     }
+    
+    
+    /**
+  	 * An example Activity in your app with Analytics
+  	 * implemented.
+  	 */
+  	
+
+  	  @Override
+  	  public void onStart() {
+  	    super.onStart();
+  	    
+  	    EasyTracker.getInstance().activityStart(this); // Add this method.
+  	  }
+
+  	  @Override
+  	  public void onStop() {
+  	    super.onStop();
+  	    
+  	    EasyTracker.getInstance().activityStop(this); // Add this method.
+  	  }
+  	
+  	
+  	private Tracker mGaTracker;
+    private GoogleAnalytics mGaInstance;
+
+    public void onCreate1(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+
+
+		
+		 
+      // Get the GoogleAnalytics singleton. Note that the SDK uses
+      // the application context to avoid leaking the current context.
+      mGaInstance = GoogleAnalytics.getInstance(this);
+
+      // Use the GoogleAnalytics singleton to get a Tracker.
+      mGaTracker = mGaInstance.getTracker("UA-38978202-5"); // Placeholder tracking ID.
+      
+   // Get singleton using application context.
+      GoogleAnalytics myInstance = GoogleAnalytics.getInstance(this);
+
+      // Enable debug mode.
+      myInstance.setDebug(true);
+     
+    }
+
+    public void onStart1() {
+      super.onStart();
+
+      // Send a screen view when the Activity is displayed to the user.
+      mGaTracker.sendView("/HomeScreen");
+    }
+    
+    
+  	
+  	
 
     final class DemoJavaScriptInterface {
 

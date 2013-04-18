@@ -57,63 +57,11 @@ public class MainActivity extends Activity {
 
         mWebView.loadUrl("http://merz-server.dyndns.biz:6067/#");
         
-        EasyTracker.getInstance().setContext(getApplicationContext());
-        
-        
-    }
-    
-    
-    /**
-  	 * An example Activity in your app with Analytics
-  	 * implemented.
-  	 */
-  	
-
-  	  @Override
-  	  public void onStart() {
-  	    super.onStart();
-  	    
-  	    EasyTracker.getInstance().activityStart(this); // Add this method.
-  	  }
-
-  	  @Override
-  	  public void onStop() {
-  	    super.onStop();
-  	    
-  	    EasyTracker.getInstance().activityStop(this); // Add this method.
-  	  }
-  	
-  	
-  	private Tracker mGaTracker;
-    private GoogleAnalytics mGaInstance;
-
-    public void onCreate1(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-
-
-		
-		 
-      // Get the GoogleAnalytics singleton. Note that the SDK uses
-      // the application context to avoid leaking the current context.
-      mGaInstance = GoogleAnalytics.getInstance(this);
-
-      // Use the GoogleAnalytics singleton to get a Tracker.
-      mGaTracker = mGaInstance.getTracker("UA-38978202-5"); // Placeholder tracking ID.
-      
-   // Get singleton using application context.
-      GoogleAnalytics myInstance = GoogleAnalytics.getInstance(this);
-
-      // Enable debug mode.
-      myInstance.setDebug(true);
      
+        
+        
     }
-
-    public void onStart1() {
-      super.onStart();
-
-      // Send a screen view when the Activity is displayed to the user.
-      mGaTracker.sendView("/HomeScreen");
-    }
+    
     
     
   	
@@ -153,37 +101,6 @@ public class MainActivity extends Activity {
     
     //------------------------------------------------------------------------------------------------------------------------
 
-    //______________________________________________________________________________________________________________________________
-    
-    
-    
-    /**@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.activity_main, menu);
-        return true;
-    }
-    
-    //var. 1
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-    	Intent intent = new Intent(this, infofile.class);
-        switch (item.getItemId()) {
-            case R.id.menu:
-            	startActivity(intent);
-
-            	//startActivity(new Intent(this, infofile.class));	        	
-              return true;
-           
-            default:
-                return super.onOptionsItemSelected(item); 
-        }
-    }
-  */
-    
-    
-    
- //_---------------------------------------------------------------------------------------------------------------------
     
    
   public boolean onKeyDown(int keyCode,KeyEvent event ){
